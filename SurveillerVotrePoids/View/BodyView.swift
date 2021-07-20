@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftUICharts
 
 struct BodyView: View {
     var body: some View {
@@ -24,7 +25,13 @@ struct BodyView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
                         .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 10)
                     
-                    Text("Graphic")
+                    //Text("Graphic")
+                 // Taux d’évolution = (valeur final - valeur initiale)/valeur initiale *100
+                    LineChartView(data: [8,23,54,32,12,37.8,7,23.6,43], title: "Poids", rateValue: 25)
+                        .padding()
+                
+                    
+                                // legend is optional, use optional
                 }
                 
                 Spacer(minLength: 20)
