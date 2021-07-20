@@ -60,7 +60,7 @@ struct ProfilView: View {
                          }
                  }
                  Button(action: {
-                     print("Updated profile")
+                     print("Updated profile1")
                  }, label: {
                      Text("Enregistrer")
                  })
