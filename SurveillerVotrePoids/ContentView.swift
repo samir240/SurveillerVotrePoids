@@ -27,8 +27,13 @@ struct ContentView: View {
                     Text("Profil")
                 }
         }
+      
+        .accentColor(.purple)
+        
+            //UITabBar.appearance().barTintColor = .black
+        }
     }
-}
+
 
 
 
