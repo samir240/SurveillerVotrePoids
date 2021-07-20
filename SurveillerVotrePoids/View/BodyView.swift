@@ -27,7 +27,7 @@ struct BodyView: View {
                     
                     //Text("Graphic")
                  // Taux d’évolution = (valeur final - valeur initiale)/valeur initiale *100
-                    LineChartView(data: [8,23,54,32,12,37.8,7,23.6,43], title: "Poids", rateValue: 25)
+                    LineChartView(data: [8,23,54,32,12,37.8,7,23.8,43], title: "Poids", rateValue: 25)
                         .padding()
                 
                     
