@@ -27,10 +27,13 @@ struct BodyView: View {
                     
                     //Text("Graphic")
                  // Taux d’évolution = (valeur final - valeur initiale)/valeur initiale *100
-                    LineChartView(data: [8,23,54,32,12,37.8,7,23.9,43], title: "Poids", rateValue: 25)
-                        .padding()
+                    // frame = CGSize(width: 180, height: 120)
+                    VStack {
+                        LineChartView(data: [8,23,54,32,12,37.8,7,23.9,43], title: "Poids", rateValue: 25)
+                        
+                    }.padding()
+                    .frame(width: 400, height: 400)
                 
-                    
                                 // legend is optional, use optional
                 }
                 
