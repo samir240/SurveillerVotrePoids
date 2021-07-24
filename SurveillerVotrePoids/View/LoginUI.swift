@@ -10,11 +10,31 @@ import SwiftUI
 struct LoginUI: View {
     @State var email = ""
     @State var password = ""
+    @State var selection: Int? = nil
+    @State var isLinkActive:Int? = nil
+    @State var isLinkActive2:Int? = nil
     var body: some View {
-        VStack (spacing: 15){
+        NavigationView{
+        VStack (spacing: 10){
             Spacer()
         Text("Login")
-            Text("Already have an account? Sign in")
+            HStack{
+                Text("Vous n'avez pas encore de compte?")
+            NavigationLink(destination: SignUpUI(),tag: 1, selection:$isLinkActive2){
+                
+                
+                Button(action: {
+                    self.isLinkActive2 = 1
+                }) {
+                   
+                    Text("S'inscrire")
+                        
+                    
+                }
+                
+            }
+           
+            }
             HStack {
                 Image (systemName: "envelope")
                 TextField("Email", text: $email)
@@ -29,17 +49,26 @@ struct LoginUI: View {
             .padding(.horizontal, 20)
             .cornerRadius(8)
             
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+         
+                NavigationLink(destination: ContentView(),tag: 1, selection:$isLinkActive){
+               // Button(action: { print("login tapped")
+                        //self.selection = 1}) {
+             
                 Text("Login")
+                //}
                     .foregroundColor(.white)
                     .font(.system(size: 24, weight: .medium))
-            }).frame(maxWidth: .infinity)
+            .frame(maxWidth: .infinity)
             .padding(.vertical, 20)
             .background(Color.green.opacity(0.8))
             .cornerRadius(8)
             .padding(.horizontal, 20)
+            
+            }
+            
         }
     }
+}
 }
 
 struct LoginUI_Previews: PreviewProvider {

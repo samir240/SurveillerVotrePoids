@@ -29,10 +29,10 @@ struct BodyView: View {
                  // Taux d’évolution = (valeur final - valeur initiale)/valeur initiale *100
                     // frame = CGSize(width: 180, height: 120)
                     VStack {
-                        LineChartView(data: [8,23,54,32,12,37.8,7,23.9,43], title: "Poids", rateValue: 25)
+                        LineChartView(data: [73,73.2,72.9,72.7,72.3,71,70,70.9,71.5], title: "Poids",  form: CGSize(width: 350, height: 200),rateValue: 25)
                         
                     }.padding()
-                    .frame(width: 400, height: 400)
+                    //.frame(width: 400, height: 200)
                 
                                 // legend is optional, use optional
                 }

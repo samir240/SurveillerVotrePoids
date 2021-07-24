@@ -11,7 +11,7 @@ import SwiftUI
 struct SurveillerVotrePoidsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoginUI()
         }
     }
 }
