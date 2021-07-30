@@ -8,8 +8,41 @@
 import SwiftUI
 
 struct WeighingView: View {
+    
+    @State private var isPresented: Bool = false
+    @State private var text: String = ""
+    
+    
     var body: some View {
-        Text("Pesée")
+        ZStack{
+        VStack{
+            
+            Button("Ajouter"){
+                self.isPresented = true
+            }
+            List(weight.default) { weight in
+                HStack{
+                    Image(weight.imageName)
+                        .resizable() .frame(width: 100, height: 100)
+                   
+                   
+                    Spacer()
+                    VStack(spacing : 10){
+                        Text(weight.poids)
+                            .font(.largeTitle)
+                        Text(weight.dateheure)
+                            .font(.footnote)
+                    }
+                  
+                }
+            }
+        }
+            EAlert(isShow: $isPresented, text: $text, onDone: { text in
+                print(text)
+                
+            })
+        }
+        
     }
 }
 
