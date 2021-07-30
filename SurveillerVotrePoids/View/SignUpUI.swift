@@ -14,7 +14,9 @@ struct SignUpUI: View {
     
     var body: some View {
         
-        VStack (spacing: 15){
+        VStack (spacing: 10){
+            Image("work")
+                .resizable() .frame(width: 350, height: 350)
         Spacer()
     Text("SignUp")
         //Text("Already have an account? Sign in")
@@ -45,7 +47,7 @@ struct SignUpUI: View {
                 .font(.system(size: 24, weight: .medium))
         }).frame(maxWidth: .infinity)
         .padding(.vertical, 20)
-        .background(Color.green.opacity(0.8))
+        .background(Color.purple.opacity(0.8))
         .cornerRadius(8)
         .padding(.horizontal, 20)
     }

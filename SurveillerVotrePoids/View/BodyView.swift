@@ -37,15 +37,45 @@ struct BodyView: View {
                                 // legend is optional, use optional
                 }
                 
-                Spacer(minLength: 20)
+                Spacer(minLength: 10)
                 
                 ZStack {
                     Color.white.opacity(0.35)
-                        .frame(width: 300, height: 100)
+                        .frame(width: 350, height: 400)
                         .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
                         .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 10)
+                    VStack{
+                        HStack(alignment: .center, spacing: 10){
+                        Image(systemName: "p.circle")
+                        .resizable() .frame(width: 45, height: 45)
+                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                        
+                        Text("POIDS")
+                            Spacer()
+                            Text("73.2 kg")
+                                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                
+                        }.frame(width: 300, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        HStack(alignment: .center, spacing: 10){
+                            Image(systemName: "i.circle")
+                            .resizable() .frame(width: 45, height: 45)
+                            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                            Text("IMC")
+                            Spacer()
+                            Text("20.2")
+                                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        }.frame(width: 300, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        HStack(alignment: .center, spacing: 10){
+                            Image(systemName: "f.circle")
+                            .resizable() .frame(width: 45, height: 45)
+                            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                            Text("FCM")
+                            Spacer()
+                            Text("190")
+                                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     
-                    Text("Jauge")
+                        }.frame(width: 300, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    }.padding()
                 }
                 
                 Spacer()

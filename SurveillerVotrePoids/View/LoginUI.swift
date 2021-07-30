@@ -16,6 +16,10 @@ struct LoginUI: View {
     var body: some View {
         NavigationView{
         VStack (spacing: 10){
+            Image("losing")
+                .resizable() .frame(width: 400, height: 400)
+
+            
             Spacer()
         Text("Login")
             HStack{
@@ -60,7 +64,7 @@ struct LoginUI: View {
                     .font(.system(size: 24, weight: .medium))
             .frame(maxWidth: .infinity)
             .padding(.vertical, 20)
-            .background(Color.green.opacity(0.8))
+            .background(Color.purple.opacity(0.8))
             .cornerRadius(8)
             .padding(.horizontal, 20)
             
