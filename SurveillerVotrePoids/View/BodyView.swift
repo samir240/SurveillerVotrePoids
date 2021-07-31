@@ -21,31 +21,59 @@ struct BodyView: View {
                 
                 ZStack {
                     Color.white.opacity(0.35)
-                        .frame(width: 350, height: 400)
+                        .frame(width: 350, height: 350)
                         .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
                         .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 10)
                     
-                    //Text("Graphic")
+                   
                  // Taux d’évolution = (valeur final - valeur initiale)/valeur initiale *100
                     // frame = CGSize(width: 180, height: 120)
-                    VStack {
-                        LineChartView(data: [73,73.2,72.9,72.7,72.3,71,70,70.9,71.5], title: "Poids",  form: CGSize(width: 350, height: 200),rateValue: 25)
+                    VStack{
+                        Text("Suivi de poids")
+                    HStack(alignment: .bottom) {
+                        
+                        //LineChartView(data: [73,73.2,72.9,72.7,72.3,71,70,70.9,71.5], title: "Poids",  form: CGSize(width: 350, height: 200),rateValue: 25)
+                        VStack{RoundedRectangle(cornerRadius: 10).fill(Color.purple).frame(width: 30, height: 155)
+                            Text("75")
+                        }
+                        VStack{RoundedRectangle(cornerRadius: 10).fill(Color.blue).frame(width: 30, height: 200)
+                            Text("77")
+                        }
+                        VStack{RoundedRectangle(cornerRadius: 10).fill(Color.purple).frame(width: 30, height: 166)
+                            Text("76")
+                        }
+                        VStack{RoundedRectangle(cornerRadius: 10).fill(Color.blue).frame(width: 30, height: 222)
+                            Text("78")
+                        }
+                        VStack{RoundedRectangle(cornerRadius: 10).fill(Color.purple).frame(width: 30, height: 200)
+                            Text("77")
+                        }
+                        VStack{RoundedRectangle(cornerRadius: 10).fill(Color.blue).frame(width: 30, height: 155)
+                            Text("75")
+                        }
+                        VStack{RoundedRectangle(cornerRadius: 10).fill(Color.purple).frame(width: 30, height: 160)
+                            Text("75.5")
+                        }
+                  
                         
                     }.padding()
+                    .position(x: 200, y: 200)
                     //.frame(width: 400, height: 200)
-                
+                        RoundedRectangle(cornerRadius: 10).fill(Color.red).frame(width: 300, height: 3)
+                            .position(x: 200, y: -50)
+                    }.padding()
                                 // legend is optional, use optional
                 }
                 
-                Spacer(minLength: 10)
+                Spacer(minLength: 0)
                 
                 ZStack {
                     Color.white.opacity(0.35)
-                        .frame(width: 350, height: 400)
+                        .frame(width: 350, height: 350)
                         .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
                         .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 10)
                     VStack{
-                        HStack(alignment: .center, spacing: 10){
+                        HStack(alignment: .center, spacing: 5){
                         Image(systemName: "p.circle")
                         .resizable() .frame(width: 45, height: 45)
                         .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
@@ -76,7 +104,7 @@ struct BodyView: View {
                     
                         }.frame(width: 300, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     }.padding()
-                }
+                }.position(x: 208, y: 160)
                 
                 Spacer()
             }
