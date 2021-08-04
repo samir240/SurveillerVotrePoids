@@ -6,19 +6,28 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct SignUpUI: View {
     @State var email = ""
     @State var password = ""
     @State var Cpassword = ""
     
+    @State var user: User?
+    @State var showMain = false
+    @State var loading = false
+    
+    @State var isAlertPresented = false
+    @State var alertMessage = ""
+    
     var body: some View {
         
-        VStack (spacing: 10){
+        VStack (spacing: 5){
             Image("work")
-                .resizable() .frame(width: 350, height: 350)
+                .resizable().frame(width: 200, height: 200)
         Spacer()
-    Text("SignUp")
+            .frame(height: 10)
+    //Text("SignUp")
         //Text("Already have an account? Sign in")
         HStack {
             Image (systemName: "envelope")
@@ -41,7 +50,33 @@ struct SignUpUI: View {
             .padding(.horizontal, 20)
             .cornerRadius(8)
         
-        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+            Button(action: {
+                
+            // create user with Email
+                
+                Auth.auth().createUser(withEmail: email, password: password) { (authDataResult, error) in
+                    
+                    if error != nil {
+                        alertMessage = error!.localizedDescription
+                        isAlertPresented = true
+                        
+                    } else {
+                        Auth.auth().currentUser?.sendEmailVerification(completion: {
+                            (error) in
+                            if error == nil {
+                                alertMessage = "Votre compte a bien été créé !. un email vous a été envoyé"
+                                isAlertPresented = true
+                            }
+                        })
+                    }
+                }
+                
+                
+                
+                
+                
+                
+            }, label: {
             Text("SignUp")
                 .foregroundColor(.white)
                 .font(.system(size: 24, weight: .medium))
@@ -51,6 +86,9 @@ struct SignUpUI: View {
         .cornerRadius(8)
         .padding(.horizontal, 20)
     }
+        .alert(isPresented: $isAlertPresented, content: {
+            Alert(title: Text(alertMessage))
+        })
     }
 }
 

@@ -62,6 +62,7 @@ struct BodyView: View {
                         RoundedRectangle(cornerRadius: 10).fill(Color.red).frame(width: 300, height: 3)
                             .position(x: 200, y: -50)
                     }.padding()
+                    .frame(width: 400, height: 400, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                 // legend is optional, use optional
                 }
                 

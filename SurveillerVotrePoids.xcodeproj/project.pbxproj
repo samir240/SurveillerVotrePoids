@@ -15,10 +15,15 @@
 		D03F6FCD26A9FA5D00021914 /* SignUpUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03F6FCC26A9FA5D00021914 /* SignUpUI.swift */; };
 		D065CEDB26B44D2900E93117 /* weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = D065CEDA26B44D2900E93117 /* weight.swift */; };
 		D065CEDF26B45AFA00E93117 /* EAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D065CEDE26B45AFA00E93117 /* EAlert.swift */; };
+		D06A051C26B9BB6500CF2701 /* MDO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A051B26B9BB6500CF2701 /* MDO.swift */; };
 		D0C07C1426A35BDC0018E0CA /* SurveillerVotrePoidsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C07C1326A35BDC0018E0CA /* SurveillerVotrePoidsApp.swift */; };
 		D0C07C1626A35BDC0018E0CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C07C1526A35BDC0018E0CA /* ContentView.swift */; };
 		D0C07C1826A35BDF0018E0CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0C07C1726A35BDF0018E0CA /* Assets.xcassets */; };
 		D0C07C1B26A35BDF0018E0CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0C07C1A26A35BDF0018E0CA /* Preview Assets.xcassets */; };
+		D0C91B6326B97EDF003B3227 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D0C91B6226B97EDF003B3227 /* FirebaseAuth */; };
+		D0C91B6526B97EDF003B3227 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D0C91B6426B97EDF003B3227 /* FirebaseFirestore */; };
+		D0C91B6726B97EDF003B3227 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = D0C91B6626B97EDF003B3227 /* FirebaseDatabase */; };
+		D0C91B6926B981C6003B3227 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0C91B6826B981C6003B3227 /* GoogleService-Info.plist */; };
 		D0DDA35A26A6E23700C7F645 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = D0DDA35926A6E23700C7F645 /* SwiftUICharts */; };
 		D0FCFCB826A889830083D6E5 /* Circleimage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FCFCB726A889830083D6E5 /* Circleimage.swift */; };
 /* End PBXBuildFile section */
@@ -32,12 +37,14 @@
 		D03F6FCC26A9FA5D00021914 /* SignUpUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUI.swift; sourceTree = "<group>"; };
 		D065CEDA26B44D2900E93117 /* weight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weight.swift; sourceTree = "<group>"; };
 		D065CEDE26B45AFA00E93117 /* EAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAlert.swift; sourceTree = "<group>"; };
+		D06A051B26B9BB6500CF2701 /* MDO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDO.swift; sourceTree = "<group>"; };
 		D0C07C1026A35BDC0018E0CA /* SurveillerVotrePoids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurveillerVotrePoids.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0C07C1326A35BDC0018E0CA /* SurveillerVotrePoidsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveillerVotrePoidsApp.swift; sourceTree = "<group>"; };
 		D0C07C1526A35BDC0018E0CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D0C07C1726A35BDF0018E0CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0C07C1A26A35BDF0018E0CA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D0C07C1C26A35BDF0018E0CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0C91B6826B981C6003B3227 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0FCFCB726A889830083D6E5 /* Circleimage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Circleimage.swift; path = "../../SwiftUI Demo 2/SwiftUI Demo 2/Circleimage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -47,6 +54,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0DDA35A26A6E23700C7F645 /* SwiftUICharts in Frameworks */,
+				D0C91B6326B97EDF003B3227 /* FirebaseAuth in Frameworks */,
+				D0C91B6726B97EDF003B3227 /* FirebaseDatabase in Frameworks */,
+				D0C91B6526B97EDF003B3227 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,11 +66,13 @@
 		90635DAB26A61A90005C9C47 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D0C91B6826B981C6003B3227 /* GoogleService-Info.plist */,
 				90635DAC26A61AA9005C9C47 /* BodyView.swift */,
 				90635DB026A61B45005C9C47 /* WeighingView.swift */,
 				90635DB326A61BBC005C9C47 /* ProfilView.swift */,
 				D03F6FCA26A9EE2500021914 /* LoginUI.swift */,
 				D03F6FCC26A9FA5D00021914 /* SignUpUI.swift */,
+				D06A051B26B9BB6500CF2701 /* MDO.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -124,6 +136,9 @@
 			name = SurveillerVotrePoids;
 			packageProductDependencies = (
 				D0DDA35926A6E23700C7F645 /* SwiftUICharts */,
+				D0C91B6226B97EDF003B3227 /* FirebaseAuth */,
+				D0C91B6426B97EDF003B3227 /* FirebaseFirestore */,
+				D0C91B6626B97EDF003B3227 /* FirebaseDatabase */,
 			);
 			productName = SurveillerVotrePoids;
 			productReference = D0C07C1026A35BDC0018E0CA /* SurveillerVotrePoids.app */;
@@ -154,6 +169,7 @@
 			mainGroup = D0C07C0726A35BDC0018E0CA;
 			packageReferences = (
 				D0DDA35826A6E23700C7F645 /* XCRemoteSwiftPackageReference "ChartView" */,
+				D0C91B6126B97EDF003B3227 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = D0C07C1126A35BDC0018E0CA /* Products */;
 			projectDirPath = "";
@@ -171,6 +187,7 @@
 			files = (
 				D0C07C1B26A35BDF0018E0CA /* Preview Assets.xcassets in Resources */,
 				D0C07C1826A35BDF0018E0CA /* Assets.xcassets in Resources */,
+				D0C91B6926B981C6003B3227 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +206,7 @@
 				90635DB126A61B45005C9C47 /* WeighingView.swift in Sources */,
 				90635DAD26A61AA9005C9C47 /* BodyView.swift in Sources */,
 				D065CEDF26B45AFA00E93117 /* EAlert.swift in Sources */,
+				D06A051C26B9BB6500CF2701 /* MDO.swift in Sources */,
 				D0FCFCB826A889830083D6E5 /* Circleimage.swift in Sources */,
 				D03F6FCB26A9EE2500021914 /* LoginUI.swift in Sources */,
 				D03F6FCD26A9FA5D00021914 /* SignUpUI.swift in Sources */,
@@ -329,7 +347,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.samir.demo.SurveillerVotrePoids;
+				PRODUCT_BUNDLE_IDENTIFIER = com.samir.demo.SVP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -351,7 +369,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.samir.demo.SurveillerVotrePoids;
+				PRODUCT_BUNDLE_IDENTIFIER = com.samir.demo.SVP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -382,6 +400,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D0C91B6126B97EDF003B3227 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.4.0;
+			};
+		};
 		D0DDA35826A6E23700C7F645 /* XCRemoteSwiftPackageReference "ChartView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AppPear/ChartView";
@@ -393,6 +419,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D0C91B6226B97EDF003B3227 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0C91B6126B97EDF003B3227 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		D0C91B6426B97EDF003B3227 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0C91B6126B97EDF003B3227 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		D0C91B6626B97EDF003B3227 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0C91B6126B97EDF003B3227 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
 		D0DDA35926A6E23700C7F645 /* SwiftUICharts */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D0DDA35826A6E23700C7F645 /* XCRemoteSwiftPackageReference "ChartView" */;

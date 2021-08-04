@@ -6,18 +6,61 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseDatabase
 
 struct ProfilView: View {
-    @State private var firstname = ""
-    @State private var lastname = ""
-    @State private var sexe = ""
+   var ref: DatabaseReference = Database.database().reference()
+    
+    @State private var firstname = "\(UserDefaults.standard.string(forKey: "prenom") ?? "")"
+    @State private var lastname = UserDefaults.standard.string(forKey: "nom") ?? ""
+    @State private var sexe = UserDefaults.standard.string(forKey: "sexe") ?? ""
     @State private var age = 18
-    @State private var taille = 170
-    @State private var poids = 80
-    @State private var poidsIdeal = 70
+    @State private var taille = UserDefaults.standard.integer(forKey: "taille") ?? 180
+    @State private var poids = UserDefaults.standard.integer(forKey: "poids") ?? 73
+    @State private var poidsIdeal = UserDefaults.standard.integer(forKey: "pideal") ?? 70
     @State private var dateNaiss = Date()
     
+    
+    struct globalString {
+        static var stringy = ""
+        static var temperature = 0.0
+    }
+  
+    init() {
+        print("batata")
+        //self.ref.child("CxiKuzuE4zUEPs3iYkoEKV6bnZj1").observeSingleEvent(of: .value)
+        self.ref.child("users/CxiKuzuE4zUEPs3iYkoEKV6bnZj1").getData { (error, snapshot) in
+            if let error = error {
+                print("Error getting data \(error)")
+            }
+            else if snapshot.exists() {
+                print("Got data \(snapshot.value!)")
+                print(snapshot.childrenCount)
+                
+                let dict = snapshot.value as! [String: Any]
+                print(dict["long"])
+                //self.firstname = dict["long"] as? String ?? ""
+                        //let owner = dict["owner"] as? String ?? ""
+                let defaults = UserDefaults.standard
+                defaults.set(dict["long"], forKey: "taille")
+                defaults.set(dict["weiht"], forKey: "poids")
+                defaults.set(dict["sexe1"], forKey: "sexe")
+                defaults.set(dict["prenom"], forKey: "prenom")
+                defaults.set(dict["pIdeal"], forKey: "pideal")
+                defaults.set(dict["nom"], forKey: "nom")
+            }
+            else {
+                print("No data available")
+            }
+            
+        }
+      print("apriiiiii")
+        
+    }
+    
     var body: some View {
+        
 
         ZStack{
             
@@ -30,7 +73,10 @@ struct ProfilView: View {
                 ZStack{
                     VStack{
                     Circleimage()
-                        Text("Prénom Nom").fontWeight(.bold);                       Text("Age")
+                        
+                      
+                        Text("\(UserDefaults.standard.string(forKey: "prenom") ?? "Prénom") \(UserDefaults.standard.string(forKey: "nom") ?? "Nom")").fontWeight(.bold);
+                        Text(UserDefaults.standard.string(forKey: "age") ?? "Age")
                     }
                 }
                 Spacer()
@@ -52,6 +98,7 @@ struct ProfilView: View {
                                              in: 1...100,
                                              label: {
                                          Text("Age : \(self.age)")
+                                     poids
                                      })*/
                                     DatePicker("Date de naissance : ", selection: $dateNaiss, displayedComponents: .date)
                                      Stepper(value: $taille,
@@ -77,7 +124,9 @@ struct ProfilView: View {
                                              }
                                      }
                                      Button(action: {
-                                         print("Updated profile1")
+                                         print("dateNaiss")
+                                        self.ref.child("users").child("CxiKuzuE4zUEPs3iYkoEKV6bnZj1").setValue(["prenom": firstname, "nom": lastname, "long" : taille,"weiht": poids, "pIdeal": poidsIdeal,"sexe1": sexe])
+                                        
                                      }, label: {
                                          Text("Enregistrer")
                                      })
@@ -99,7 +148,8 @@ struct ProfilView: View {
         
         
     }
-}
+        }
+    
 
 struct ProfilView_Previews: PreviewProvider {
     static var previews: some View {
