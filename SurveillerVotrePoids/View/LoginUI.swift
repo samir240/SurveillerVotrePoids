@@ -4,7 +4,6 @@
 //
 //  Created by MACBOOKAIR on 22/07/2021.
 //
-
 import SwiftUI
 import Firebase
 
@@ -23,9 +22,12 @@ struct LoginUI: View {
     @State var isLinkActive2:Int? = nil
     
     @State var shouldNavigate = true
+    @State var showView = true
+    
+    @State var goWhenTrue: Bool = true
     
     var body: some View {
-        
+        NavigationView {
         VStack (spacing: 5) {
             Image("losing")
                 .resizable() .frame(width: 250, height: 250)
@@ -35,13 +37,11 @@ struct LoginUI: View {
             HStack{
                 
                 Text("Vous n'avez pas encore de compte?")
-                Text("S'inscrire")
                 
-                Text("Hello navigation")
-                            .overlay(NavigationLink(
-                                destination: SignUpUI(),
-                                isActive: $shouldNavigate) {}
-                                .hidden())
+                   
+                        NavigationLink(destination: SignUpUI()) {
+                            Text("S'inscrire")
+                        }
             }
            
             HStack {
@@ -61,10 +61,17 @@ struct LoginUI: View {
             }.padding(.all, 20)
             .padding(.horizontal, 20)
             .cornerRadius(8)
+        
             
-         
-                //NavigationLink(destination: ContentView(),tag: 1, selection:$isLinkActive){
-                Button(action: {
+            Text("Primary View")
+            /// 2
+            
+        
+       
+            
+                Button("login"){
+                print("fdtfzdftzfdtzfdztfd")
+                    goWhenTrue = true
                     //self.hideKeybord()
                     Auth.auth().signIn(withEmail: email, password: password) { (authDataResult, error) in
                         
@@ -75,41 +82,29 @@ struct LoginUI: View {
                         }
                         else {
                             if let user = authDataResult?.user {
+                                print("okkkkkkkkkkkkkk")
+                                
                                 self.user = user
-                                self.showMain = true
+                               // self.showMain = true
+                                self.isLinkActive = 1
+                                
                             }
+                                                  }
                         }
-                        }
-                   
+                    print(showView)
+                   print("232323232323")
+                    NavigationLink(destination: ContentView(), isActive: $showView){}
                             
-                            
-                            
-                            
-                            
-                    }, label: {
-                        //self.selection = 1}) {
-             
-                
-                
-                
-                Text("Login")
-                //}
-                    .foregroundColor(.white)
-                    .font(.system(size: 24, weight: .medium))
-                    }).frame(maxWidth: .infinity)
-            .padding(.vertical, 20)
-            .background(Color.purple.opacity(0.8))
-            .cornerRadius(8)
-            .padding(.horizontal, 20)
+                    }
+            
         }
-                .fullScreenCover(isPresented: $showMain, content: {
-                    Text("Connecté")
-                })
+ 
         .alert(isPresented: $isAlertPresented, content: {
             Alert(title: Text(alertMessage))
         })
-            
+          
         
+    }
     }
 }
 

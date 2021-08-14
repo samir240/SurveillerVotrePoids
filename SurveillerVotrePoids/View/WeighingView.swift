@@ -18,6 +18,7 @@ struct WeighingView: View {
         VStack{
             
             Button("Ajouter"){
+              
                 self.isPresented = true
             }
             List(weight.default) { weight in

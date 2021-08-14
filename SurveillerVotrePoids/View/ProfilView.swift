@@ -22,6 +22,13 @@ struct ProfilView: View {
     @State private var dateNaiss = Date()
     
     
+    let today = Date()
+    let formatter1 = DateFormatter()
+   
+    //print(formatter1.string(from: today))
+    // refresh the view?
+      @State var refresh: Bool = false
+    
     struct globalString {
         static var stringy = ""
         static var temperature = 0.0
@@ -64,9 +71,11 @@ struct ProfilView: View {
 
         ZStack{
             
-            LinearGradient(gradient: Gradient(colors: [Color.white, Color.white.opacity(0.0)]), startPoint: .top, endPoint: .bottom)
+            //LinearGradient(gradient: Gradient(colors: [Color(red: 242 / 255, green: 242 / 255, blue: 247 / 255), Color.white.opacity(0.0)]), startPoint: .top, endPoint: .bottom)
+            Color(red: 242 / 255, green: 242 / 255, blue: 242 / 255)
+                .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             
-            LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)).opacity(0.4), Color(#colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)).opacity(0.6)]), startPoint: .topLeading, endPoint: .bottomTrailing)
+ /*  LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)).opacity(0.4), Color(#colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)).opacity(0.6)]), startPoint: .topLeading, endPoint: .bottomTrailing)*/
          
             VStack{
                 Spacer()
@@ -124,9 +133,25 @@ struct ProfilView: View {
                                              }
                                      }
                                      Button(action: {
-                                         print("dateNaiss")
+                                         print(dateNaiss)
+                                       //
+                                        formatter1.dateStyle = .short
+                                        print(formatter1.string(from: today))
                                         self.ref.child("users").child("CxiKuzuE4zUEPs3iYkoEKV6bnZj1").setValue(["prenom": firstname, "nom": lastname, "long" : taille,"weiht": poids, "pIdeal": poidsIdeal,"sexe1": sexe])
-                                        
+                                        self.refresh.toggle()
+                                        //print(formatter1.string(from: today))
+                                        self.ref.child("users").child("CxiKuzuE4zUEPs3iYkoEKV6bnZj1").child("pesee").setValue(["\(formatter1.string(from: today).replacingOccurrences(of: "/", with: "-"))": "55"])
+                                        refresh = true
+                                       //refresh
+                                        let defaults = UserDefaults.standard
+                                        defaults.set(taille, forKey: "taille")
+                                        defaults.set(poids, forKey: "poids")
+                                        defaults.set(sexe, forKey: "sexe")
+                                        defaults.set(firstname, forKey: "prenom")
+                                        defaults.set(poidsIdeal, forKey: "pideal")
+                                        defaults.set(lastname, forKey: "nom")
+                                        //TextField.init(StringProtocol, text: <#T##Binding<String>#>)
+                                        //refresh end
                                      }, label: {
                                          Text("Enregistrer")
                                      })
@@ -138,6 +163,7 @@ struct ProfilView: View {
                              }
                                  .frame(width: 400, height: 500)
                             // Fin Ajout form
+                            
                 }
                 Spacer()
             }
