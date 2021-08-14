@@ -81,7 +81,7 @@ struct ProfilView: View {
                 Spacer()
                 ZStack{
                     VStack{
-                    Circleimage()
+                    //Circleimage()
                         
                       
                         Text("\(UserDefaults.standard.string(forKey: "prenom") ?? "Prénom") \(UserDefaults.standard.string(forKey: "nom") ?? "Nom")").fontWeight(.bold);

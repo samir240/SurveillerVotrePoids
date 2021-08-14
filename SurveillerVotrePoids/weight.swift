@@ -14,7 +14,7 @@ struct weight : Identifiable {
     var poids : String
     
     static let `default` =  [
-    weight(imageName: "1", dateheure: "Le 28/12/2019 à 12:00", poids: "75.20 kg"),
+        weight(imageName: "1", dateheure: "Le 28/12/2019 à 12:00", poids: "75.20 kg"),
         weight(imageName: "1", dateheure: "Le 21/12/2019 à 12:00", poids: "75.20 kg"),
         weight(imageName: "1", dateheure: "Le 22/12/2019 à 12:00", poids: "75.20 kg"),
         weight(imageName: "1", dateheure: "Le 23/12/2019 à 12:00", poids: "75.20 kg"),
